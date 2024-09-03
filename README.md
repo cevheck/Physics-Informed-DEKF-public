@@ -43,7 +43,7 @@ Folder containing the state and control measurement data of the Cam Follower sys
 ## plots
 ### paper_plots
 Contains all the plots used in the paper
-### other_plots
+### additional_plots
 Contains additional plots, sometimes refered to within the paper but not depicted therein.
 
 ## scripts
