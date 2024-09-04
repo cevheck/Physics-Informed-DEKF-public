@@ -5,7 +5,7 @@ Repository Accompanying the paper: "Physics-Informed Ensembles of Dual Extended 
 Submitted for review in Mechanical Systems and Signal Processing.
 
 # DISCLAIMER
-Code & Paper will not yet be included until publication.
+Code & Paper (Manuscript) will not yet be included until publication.
 
 # Paper-H-DEKF
 
