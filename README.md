@@ -65,7 +65,7 @@ Contains functions and classes utilized by the scripts in the "scrips/" folder.
 	- setup_src.py: Additional functions used for setting up the filtering problem (pathing/conversion to correct matrix format/correct function loading dependent on hybrid/physics/neural, ...)
 	
 ## visualization
-Contains all files used for creating the Figures and more. General way of working is converting the results into specific form for the plot. The data after conversion can be saved (save=True) and later immediately loaded (load=True) for speed up of the plot creation. We already created the pickle files (by running with save=True), creating the folder and results at location visualization/plots & visualization/plots_wandb1, therefore running the code with load=True should already recreate the plots.
+Contains all files used for creating the Figures and more. General way of working is converting the results into specific form for the plot. The data after conversion can be saved (save=True) and later immediately loaded (load=True) for speed up of the plot creation. We already created the pickle files (by running with save=True), creating the folder and results at location visualization/plots & visualization/plots_wandb1, therefore running the code with load=True should already recreate the plots. In order to use the provided files, the folders (and all subfolders) should first be unzipped. Lastly, visualization/plots/time_evol_global_Qx was too big to push to Github and is split into v1 & v2. To be used in the visualization scripts, one should unzip the filed and concatenate them into a single folder named visualization/plots/time_evol_global_Qx.
 
 	- time_evolution.py: Fig 4a and Fig 5
 	- time_evolution_different_criteria.py: Fig 6
