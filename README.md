@@ -70,8 +70,8 @@ Contains all files used for creating the Figures and more. General way of workin
 	- time_evolution.py: Fig 4a and Fig 5
 	- time_evolution_different_criteria.py: Fig 6
 	- model_prediction_errorbars.py: Fig. 4b
+	- model_prediction_errorbars_ifo_n.py: Fig. B9
 	- pareto_combined.py: Fig 7
-	- pareto.py (Fig 7 but not averaged over all data)
 	- pathmagic.py: File to fix pathing
 	- plot_style.txt: File used for cleaner plots (imported in util.py, except for creation of Fig 5)
 	- plot_util.py: Contains all of the functions related to plotting and handling of the pickle result files. Functionalities will be called upon from other files.
