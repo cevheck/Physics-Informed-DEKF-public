@@ -14,7 +14,7 @@ In what follows a quick overview is provided of the folder structure. This Githu
 
 
 # Hybrid Dual Extended Kalman Filter
-![HPDEKF](https://github.ugent.be/storage/user/8654/files/699e4e54-4d18-49e6-874a-1c77417f0d32)
+![HDEKF](https://github.com/user-attachments/assets/ff0c9672-ce86-4eda-9cd3-338d5764ab2e)
 
 # Variant methods
 ## _Hybrid_ model (Neural Network Augmented Physics)
