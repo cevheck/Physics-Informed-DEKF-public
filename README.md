@@ -18,13 +18,13 @@ In what follows a quick overview is provided of the folder structure. This Githu
 
 # Variant methods
 ## _Hybrid_ model (Neural Network Augmented Physics)
-![HM2](https://github.ugent.be/storage/user/8654/files/b8461070-460f-4829-bd47-e3abb124f22b)
+![HybridModel](https://github.com/user-attachments/assets/20372f50-7368-472d-958f-3839fb91e34b)
 
 ## _Neural_ model
-![NM2](https://github.ugent.be/storage/user/8654/files/133f0e82-ac06-42df-9b7e-99a5a13cc30e)
+![NeuralModel](https://github.com/user-attachments/assets/a74b935d-cabf-4ae1-b4c6-0981962b42f5)
 
 ## _Physics_ model
-![pM2](https://github.ugent.be/storage/user/8654/files/e102d2e5-adfd-414b-a665-83e42c219a1b)
+![PhysicalModel](https://github.com/user-attachments/assets/716cc960-d405-40ad-b69d-49b3ada95778)
 
 # All Folders
 
