@@ -125,7 +125,7 @@ for model_idx, modeltype in enumerate(modeltypes):
                     EnsembleSave_Qsetting = EnsembleSave + f'_Q_NN_added_rel_{Q_NN_added_rel_i}/'  
                 else:
                     EnsembleSave_Qsetting = EnsembleSave          
-                print(f"Creating results for Q_NN_added_rel = {Q_NN_added_rel_i} ")
+                # print(f"Creating results for Q_NN_added_rel = {Q_NN_added_rel_i} ")
 
                 if model == 'blackbox' and wandb_for_bb == True:
                     # loading from 1e-7 * Q_NN_added_rel instead of previously 1e-9 * Q_NN_added_rel
@@ -152,7 +152,7 @@ for model_idx, modeltype in enumerate(modeltypes):
                         y_std.append(yi_std)
                         y2_std.append(yi2_std)
                 except:
-                    print(f"Error for {modeltype} with Q_NN_added_rel = {Q_NN_added_rel_i}")
+                    # print(f"Error for {modeltype} with Q_NN_added_rel = {Q_NN_added_rel_i}")
                     continue
                 gc.collect()
             
@@ -173,7 +173,10 @@ for model_idx, modeltype in enumerate(modeltypes):
             elif whichplot == "type1":
                 y_res[model_idx, plot_what_idx, var_idx] = y
                 x_res[model_idx, plot_what_idx, var_idx] = x
-        
+if x_res.flatten().shape[0] == 0:
+    import sys
+    sys.exit("No results found for selected parameters")
+    
 if whichplot == "type2": 
     assert(np.all([np.all(x_res[i] - x_res[i,0,0] == 0) for i in range(len(x_res))])), "All x-axisses should be equal for a single model (over the different variables)"
     x_res = [x_res[i,0,0] for i in range(len(x_res))]

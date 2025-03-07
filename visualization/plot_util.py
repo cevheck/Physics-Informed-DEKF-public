@@ -335,7 +335,30 @@ def dict_to_results_JAX(results_dict, model, ax, var_i, plot_axes, plot_what, pa
             with open(savepath, 'rb') as f:
                 metric_results_all = pickle.load(f)
         else:
-            raise Exception(f"File {savepath} has not been created yet. Run with load=False & save=True to generate the file")
+            import sys
+            import warnings
+                        
+            RED = "\033[91m"
+            RESET = "\033[0m"
+
+            warnings.warn(
+                f"{RED}\n⚠️ WARNING: Missing File\n"
+                f"File not found: {savepath}\n"
+                "\nThis file has not been created yet. To resolve this issue, you have two options:\n"
+                "1️⃣ **Generate the file:**\n"
+                "   - Run the script with: `load=False, save=True`\n"
+                "   - Requires all results in the folder results/ to be made (or unzipped). \n"
+                "\n"
+                "2️⃣ **Manually extract from the provided zip files:**\n"
+                "   - Unzip the following: `/visualization/plots & /visualization/plots_wandb1`\n"
+                "   - in `/visualization/plots`, unzip `/visualization/plots/time_evol_global_Qx_v1` \n \t and `/visualization/plots/time_evol_global_Qx_v2`. Combine the content into a single folder \n \t `/visualization/plots/time_evol_global_Qx\n"
+                "       (- this v1 & v2 were provided in seperate files due to size limit on github push.) \n"
+                "   - More details in the README: 🔗 https://github.com/cevheck/Physic-Informed-DEKF/blob/main/README.md\n"
+                f"{RESET}",
+                stacklevel=2
+            )
+            sys.exit()
+            raise Exception(f"File {savepath} has not been created yet. Run with load=False & save=True to generate the visualization pickle files. Alternatively, unzip the provided zipfiles at /visualization/plots as described in the README (https://github.com/cevheck/Physic-Informed-DEKF/blob/main/README.md). To create time_evol_global_Qx, one will also need to concatenate the v1 & v2, also described in the README")
     if not load:
         metric_good_results = defaultdict(list)
         results = results_dict['results']
@@ -559,8 +582,31 @@ def pred_to_errorbars(results, model, ax, plot_axes, var_i, i=0, load=True, save
     color = colors[0] if 'H-' in model else colors[1] if 'p-' in model else colors[2]
     
     if load:
-        with open(savepath, 'rb') as f:
-            results = pickle.load(f)
+        try:
+            with open(savepath, 'rb') as f:
+                results = pickle.load(f)
+        except:
+            import sys, warnings
+            RED = "\033[91m"
+            RESET = "\033[0m"
+
+            warnings.warn(
+                f"{RED}\n⚠️ WARNING: Missing File\n"
+                f"File not found: {savepath}\n"
+                "\nThis file has not been created yet. To resolve this issue, you have two options:\n"
+                "1️⃣ **Generate the file:**\n"
+                "   - Run the script with: `load=False, save=True`\n"
+                "   - Requires all results in the folder results/ to be made (or unzipped). \n"
+                "\n"
+                "2️⃣ **Manually extract from the provided zip files:**\n"
+                "   - Unzip the following: `/visualization/plots & /visualization/plots_wandb1`\n"
+                "   - in `/visualization/plots`, unzip `/visualization/plots/time_evol_global_Qx_v1` \n \t and `/visualization/plots/time_evol_global_Qx_v2`. Combine the content into a single folder \n \t `/visualization/plots/time_evol_global_Qx\n"
+                "       (- this v1 & v2 were provided in seperate files due to size limit on github push.) \n"
+                "   - More details in the README: 🔗 https://github.com/cevheck/Physic-Informed-DEKF/blob/main/README.md\n"
+                f"{RESET}",
+                stacklevel=2
+            )
+            sys.exit()
     if not load:
         if save:
             if os.path.exists(savepath):
@@ -747,8 +793,33 @@ def dict_to_pareto(results_dict, model, Q_NN_added_rel, Q_NN_idx, ax, var_i, plo
             savepath_i = os.path.join(savefolder, f'{model}_plot_{plot_what_i}_{plot_axes}_{var_i}_Q_NN_added_rel_{Q_NN_added_rel}.pkl')
             if Q_NN_added_rel == 0.0:
                 savepath_i = savepath_i.replace("_Q_NN_added_rel_0", "")
-            with open(savepath_i, 'rb') as f:
-                metric_good_results_i = pickle.load(f)
+            try:
+                with open(savepath_i, 'rb') as f:
+                    metric_good_results_i = pickle.load(f)
+            except:
+                import sys
+                import warnings
+                            
+                RED = "\033[91m"
+                RESET = "\033[0m"
+
+                warnings.warn(
+                    f"{RED}\n⚠️ WARNING: Missing File\n"
+                    f"File not found: {savepath_i}\n"
+                    "\nThis file has not been created yet. To resolve this issue, you have two options:\n"
+                    "1️⃣ **Generate the file:**\n"
+                    "   - Run the script with: `load=False, save=True`\n"
+                    "   - Requires all results in the folder results/ to be made (or unzipped). \n"
+                    "\n"
+                    "2️⃣ **Manually extract from the provided zip files:**\n"
+                    "   - Unzip the following: `/visualization/plots & /visualization/plots_wandb1`\n"
+                    "   - in `/visualization/plots`, unzip `/visualization/plots/time_evol_global_Qx_v1` \n \t and `/visualization/plots/time_evol_global_Qx_v2`. Combine the content into a single folder \n \t `/visualization/plots/time_evol_global_Qx\n"
+                    "       (- this v1 & v2 were provided in seperate files due to size limit on github push.) \n"
+                    "   - More details in the README: 🔗 https://github.com/cevheck/Physic-Informed-DEKF/blob/main/README.md\n"
+                    f"{RESET}",
+                    stacklevel=2
+                )
+                sys.exit()
             metric_good_results_i_true = metric_good_results_i['var_true']
             metric_good_results_ii = deepcopy(metric_good_results_i)
             del metric_good_results_ii['var_true']
