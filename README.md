@@ -1,8 +1,6 @@
 # Physics-Informed Ensembles of DEKF
 Repository Accompanying the paper: "Physics-Informed Ensembles of Dual Extended Kalman Filters for Online State and Parameter Estimation of Mechatronic Systems"
-
-# STATUS
-Accepted in Mechanical Systems and Signal Processing -- Production has begun
+DOI: https://doi.org/10.1016/j.ymssp.2025.112469
 
 # Paper "Physics-Informed Ensembles of Dual Extended Kalman Filters for Online State and Parameter Estimation of Mechatronic Systems"
 
