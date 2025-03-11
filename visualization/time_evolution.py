@@ -100,6 +100,8 @@ from plot_util import get_selected_results, dict_to_results, dict_to_results_JAX
 from configuration import MyConfig as MC 
 from configuration import update_MC, configurate_MC
 
+## saved data works with subsample ratio of 100 --> for correct time axis need to adapt here aswell (see README.md for more details)
+MC.dt = MC.dt * 100
 func = dict_to_results_JAX if JAX else dict_to_results
 
 for plot_what in plot_whats:

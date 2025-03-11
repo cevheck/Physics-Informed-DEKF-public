@@ -492,8 +492,11 @@ def dict_to_results_JAX(results_dict, model, ax, var_i, plot_axes, plot_what, pa
 
             if plot_error: metric_results = metric_results - var_true_key
             if plot_what == 'eps':
-                # smooth out spiky results
-                mw = 100
+                if dt == 0.5:
+                    mw = 1  # already working on subsampled version
+                else:
+                    # smooth out spiky results
+                    mw = 100
                 metric_results = moving_average(metric_results, mw)
             if padded:
                 padded_metric_results = np.array([np.concatenate((result_i, [result_i[-1]] * (maxlength - len(result_i)))) for result_i in metric_results])
@@ -857,8 +860,13 @@ def dict_to_pareto(results_dict, model, Q_NN_added_rel, Q_NN_idx, ax, var_i, plo
         # y_ax = np.mean(y_ax, axis=-1)
         
         # take mean over last values in time
-        x_ax = np.mean(x_ax[:,:,-100:], axis=-1)
-        y_ax = np.mean(y_ax[:,:,-100:], axis=-1)
+        if x_ax.shape[2] == 120:
+            # subsampled version (with factor 100, so only take last two values instead of last 200 for averaging)
+            x_ax = np.mean(x_ax[:,:,-2:], axis=-1)
+            y_ax = np.mean(y_ax[:,:,-2:], axis=-1)
+        else:
+            x_ax = np.mean(x_ax[:,:,-100:], axis=-1)
+            y_ax = np.mean(y_ax[:,:,-100:], axis=-1)
     
     if True:    # average over best_n_ensemble (mostly = 1 anyways)
         x_ax = np.mean(x_ax, axis=-1)
