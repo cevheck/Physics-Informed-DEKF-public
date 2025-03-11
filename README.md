@@ -12,17 +12,17 @@ In what follows a quick overview is provided of the folder structure. This Githu
 
 
 # Hybrid Dual Extended Kalman Filter
-![HDEKF](https://github.com/user-attachments/assets/ff0c9672-ce86-4eda-9cd3-338d5764ab2e)
+![HDEKF](https://github.com/user-attachments/assets/4c297050-c668-49a7-a638-ca7faa0b2f05)
 
 # Variant methods
 ## _Hybrid_ model (Neural Network Augmented Physics)
-![HybridModel](https://github.com/user-attachments/assets/20372f50-7368-472d-958f-3839fb91e34b)
+![HybridModel](https://github.com/user-attachments/assets/1641d4d2-5ec6-4fdb-8cc9-f07ef86cf952)
 
 ## _Neural_ model
-![NeuralModel](https://github.com/user-attachments/assets/a74b935d-cabf-4ae1-b4c6-0981962b42f5)
+![NeuralModel](https://github.com/user-attachments/assets/532c9dd1-7fa8-4942-859a-c9cc5368184f)
 
 ## _Physics_ model
-![PhysicalModel](https://github.com/user-attachments/assets/716cc960-d405-40ad-b69d-49b3ada95778)
+![PhysicalModel](https://github.com/user-attachments/assets/e5555770-6a16-4245-a647-053e4793de27)
 
 # All Folders
 
